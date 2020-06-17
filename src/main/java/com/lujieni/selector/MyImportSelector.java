@@ -1,6 +1,5 @@
 package com.lujieni.selector;
 
-import com.lujieni.bean.Pink;
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;
 
