@@ -16,10 +16,10 @@ public class Cat implements InitializingBean, DisposableBean {
     }
 
     public void destroy() throws Exception {
-        System.out.println("cat destroy...");
+        System.out.println("cat 实现DisposableBean接口 destroy...");
     }
 
     public void afterPropertiesSet() throws Exception {
-        System.out.println("cat afterPropertiesSet...");
+        System.out.println("cat 实现InitializingBean接口 afterPropertiesSet...");
     }
 }

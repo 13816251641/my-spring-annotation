@@ -11,11 +11,11 @@ public class Car {
     }
 
     public void init(){
-        System.out.println("car init...");
+        System.out.println("car使用initMethod参数 init...");
     }
 
     public void destroy(){
-        System.out.println("car destroy...");
+        System.out.println("car使用destroyMethod参数 destroy...");
     }
 
 }
