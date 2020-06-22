@@ -31,6 +31,16 @@ import org.springframework.context.annotation.Scope;
  *      postProcessAfterInitialization:在初始化之后工作
  *
  *
+ * populateBean(beanName, mbd, instanceWrapper);给bean进行属性赋值
+ * initializeBean{
+ *     applyBeanPostProcessorsBeforeInitialization(wrappedBean, beanName);//before
+ *     invokeInitMethods(beanName, wrappedBean, mbd);//自定义初始化方法
+ *     applyBeanPostProcessorsAfterInitialization(wrappedBean, beanName);//after
+ * }
+ *
+ *
+ *
+ *
  *
  *
  * BeanPostProcessor.postProcessBeforeInitialization(初始化之前执行)
