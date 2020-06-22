@@ -30,18 +30,21 @@ import org.springframework.context.annotation.Scope;
  *      postProcessBeforeInitialization:在初始化之前工作
  *      postProcessAfterInitialization:在初始化之后工作
  *
- * BeanPostProcessor.postProcessBeforeInitialization
+ *
+ *
+ *
+ * BeanPostProcessor.postProcessBeforeInitialization(初始化之前执行)
  *
  * 初始化:
  *      对象创建完成,并赋值好,调用初始化方法...
  *
- * BeanPostProcessor.postProcessAfterInitialization
+ * BeanPostProcessor.postProcessAfterInitialization(初始化之后执行)
  *
  * 销毁:
  *      单实例:容器关闭的时候
  *      多实例:容器不会管理这个bean
  */
-@ComponentScan("com.lujieni.bean,com.lujieni.processor") //把Cat Dog扫描进来了
+@ComponentScan("com.lujieni.bean,com.lujieni.processor") //把Cat Dog扫描进来了;将后置处理器扫描进来
 public class BeanLifeConfig {
 
     @Bean(initMethod = "init",destroyMethod = "destroy")
