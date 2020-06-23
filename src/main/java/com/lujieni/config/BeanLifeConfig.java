@@ -40,15 +40,19 @@ import org.springframework.context.annotation.Scope;
  *
  *
  *
- *
- *
- *
  * BeanPostProcessor.postProcessBeforeInitialization(初始化之前执行)
  *
  * 初始化:
  *      对象创建完成,并赋值好,调用初始化方法...
  *
  * BeanPostProcessor.postProcessAfterInitialization(初始化之后执行)
+ *
+ *
+ * Spring底层对BeanPostProcessor的使用:
+ *  bean赋值;注入其他组件;@Autowired;
+ *  实现了ApplicationContextAware接口就可以获得上下文对象,
+ *  原理是ApplicationContextAwareProcessor这个类,里面对实现ApplicationContextAware接口的类做了处理哦
+ *
  *
  * 销毁:
  *      单实例:容器关闭的时候

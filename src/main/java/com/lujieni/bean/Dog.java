@@ -1,5 +1,8 @@
 package com.lujieni.bean;
 
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -10,7 +13,9 @@ import javax.annotation.PreDestroy;
  * @Date 2020/6/18
  */
 @Component
-public class Dog {
+public class Dog implements ApplicationContextAware {
+
+    private ApplicationContext applicationContext;
 
     public Dog(){
         System.out.println("dog constructor...");
@@ -26,5 +31,7 @@ public class Dog {
         System.out.println("dog @PreDestroy ... ");
     }
 
-
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
+    }
 }
