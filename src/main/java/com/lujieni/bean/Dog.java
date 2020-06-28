@@ -11,6 +11,7 @@ import javax.annotation.PreDestroy;
 /**
  * @Auther lujieni
  * @Date 2020/6/18
+ * 实现ApplicationContextAware接口可以获得上下文容器
  */
 @Component
 public class Dog implements ApplicationContextAware {
@@ -21,6 +22,9 @@ public class Dog implements ApplicationContextAware {
         System.out.println("dog constructor...");
     }
 
+    /**
+     * init方法会在setApplicationContext()方法之后执行
+     */
     @PostConstruct
     public void init(){
         System.out.println("dog @PostConstruct ...");
