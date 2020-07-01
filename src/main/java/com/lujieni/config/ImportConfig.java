@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Import;
  * @Import导入组件,id默认是组件的全类名
  */
 @Import({Color.class, Red.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
-@Configuration
 public class ImportConfig {
 
     /**
