@@ -51,8 +51,10 @@ import org.springframework.context.annotation.Scope;
  * Spring底层对BeanPostProcessor的使用:
  *  bean赋值;注入其他组件;@Autowired;
  *  实现了ApplicationContextAware接口就可以获得上下文对象,
- *  原理是ApplicationContextAwareProcessor这个类,里面对实现ApplicationContextAware接口的类做了处理哦
+ *  原理是ApplicationContextAwareProcessor这个类(实现了BeanPostProcessor接口),
+ *  里面对实现ApplicationContextAware接口的类做了处理哦
  *
+ *  AutowiredAnnotationBeanPostProcessor
  *
  * 销毁:
  *      单实例:容器关闭的时候

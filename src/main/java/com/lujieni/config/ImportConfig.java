@@ -4,6 +4,7 @@ import com.lujieni.bean.Color;
 import com.lujieni.bean.Red;
 import com.lujieni.registry.MyImportBeanDefinitionRegistrar;
 import com.lujieni.selector.MyImportSelector;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.Import;
  * @Import导入组件,id默认是组件的全类名
  */
 @Import({Color.class, Red.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
+@ComponentScan("com.lujieni.bean")
 public class ImportConfig {
 
     /**
