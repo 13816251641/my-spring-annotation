@@ -23,12 +23,19 @@ import org.springframework.context.annotation.ComponentScan;
  *         BookDao bookDao;
  *      }
  *
- *  2)、spring还支持使用@Resource(JSR250)和@Inject(JSR330)[Java规范的注解]
+ * 2)、spring还支持使用@Resource(JSR250)和@Inject(JSR330)[Java规范的注解]
  *       @Resource:
  *          可以和@Autowired一样实现自动装配功能,默认是按照组件名称进行装配的
  *          没有能支持@Primary功能没有支持@Autowired(require=false);
+ *
+ * 4)、自定义组件想要使用Spring容器底层的一些组件(ApplicationContext,BeanFactory,xxx);
+ *     自定义组件实现xxxAware;在创建对象的时候,会调用接口规定的方法注入相关组件;Aware;
+ *     把Spring底层一些组件注入到自定义的Bean中;
+ *     xxxAware:功能使用xxxProcessor;
+ *       ApplicationContextAware ==> ApplicationContextAwareProcessor
+ *
  */
-@ComponentScan({"com.lujieni.controller","com.lujieni.service","com.lujieni.dao"})
+@ComponentScan({"com.lujieni.bean","com.lujieni.service"})
 public class MainConfigOfAutowired {
 
     @Bean

@@ -5,7 +5,6 @@ import com.lujieni.bean.Red;
 import com.lujieni.registry.MyImportBeanDefinitionRegistrar;
 import com.lujieni.selector.MyImportSelector;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 /**
