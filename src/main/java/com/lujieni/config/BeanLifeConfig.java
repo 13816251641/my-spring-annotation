@@ -31,21 +31,15 @@ import org.springframework.context.annotation.Scope;
  *      postProcessAfterInitialization:在初始化之后工作
  *
  *
- * populateBean(beanName, mbd, instanceWrapper);给bean进行属性赋值
+ * populateBean(beanName, mbd, instanceWrapper);处理bean中的Autowired注解
  * initializeBean{
  *     applyBeanPostProcessorsBeforeInitialization(wrappedBean, beanName);//before
- *     invokeInitMethods(beanName, wrappedBean, mbd);//自定义初始化方法
+ *     invokeInitMethods(beanName, wrappedBean, mbd);//1.InitializingBean接口的方法  2.@Bean指定init-method方法
  *     applyBeanPostProcessorsAfterInitialization(wrappedBean, beanName);//after
  * }
  *
  *
  *
- * BeanPostProcessor.postProcessBeforeInitialization(初始化之前执行)
- *
- * 初始化:
- *      对象创建完成,并赋值好,调用初始化方法...
- *
- * BeanPostProcessor.postProcessAfterInitialization(初始化之后执行)
  *
  *
  * Spring底层对BeanPostProcessor的使用:
@@ -60,7 +54,7 @@ import org.springframework.context.annotation.Scope;
  *      单实例:容器关闭的时候
  *      多实例:容器不会管理这个bean
  */
-@ComponentScan("com.lujieni.bean,com.lujieni.processor") //把Cat Dog扫描进来了;将后置处理器扫描进来
+//@ComponentScan("com.lujieni.bean,com.lujieni.processor") //把Cat Dog扫描进来了;将后置处理器扫描进来
 public class BeanLifeConfig {
 
     @Bean(initMethod = "init",destroyMethod = "destroy")
